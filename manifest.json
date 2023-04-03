@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "ColorGPT",
+    "version": "1.0",
+    "description": "A UI enhancement for ChatGPT. Color-code your conversations in a larger sidebar, filter by color, and even pin them to the top!",
+    "permissions": ["activeTab", "storage"],
+    "icons": {
+        "16": "colorgpt-16.png",
+        "48": "colorgpt-48.png",
+        "128": "colorgpt-128.png"
+      },
+    "content_scripts": [
+      {
+        "matches": ["https://chat.openai.com/chat/*"],
+        "css": ["styles.css"],
+        "js": ["content-script.js"]
+      }
+    ]
+}
