@@ -19,19 +19,14 @@ $pink: rgba(190, 78, 192, 1);
 
 //Main Area Padding-Left Adjustment
 body>div>div:nth-of-type(2)>div:nth-of-type(1) {
-    //padding-left:360px;
     padding-left: 0;
     transition: width 0.24s ease;
-    width: calc(100% - 360px);
+    width:360px;
     margin-right: 0;
     margin-left: auto;
 
     &.nav-hovered {
-        width: calc(100% - 400px);
-
-        +div {
-            width: 400px;
-        }
+        width: 400px;
     }
 
     //Sidebar Width Adjustment
@@ -128,6 +123,12 @@ nav {
 
         #colorgpt-feature-container {
             opacity: 1;
+        }
+    }
+
+    > div {
+        @media all and (min--moz-device-pixel-ratio:0) {
+            max-width:calc(100% - 0.01rem);
         }
     }
 
@@ -334,6 +335,11 @@ nav>div>div>button {
 
     &.pinned {
         order: 1;
+        &:not(.bg-gray-800) {
+            &:after {
+                opacity:1;
+            }
+        }
         &:after {
             position:absolute;
             z-index:1000;
@@ -360,7 +366,7 @@ nav>div>div>button {
             }
             //Currently Pinned Convo
             svg {
-                transform: scale(0.8) rotate(315deg);
+                transform: scale(0.88) rotate(315deg);
                 opacity: 1;
                 path {
                     fill: #fff;
@@ -389,9 +395,23 @@ nav>div>div>button {
             z-index: 3;
         }
     }
-
+    svg {
+        path, line, polyline {
+            color:rgba(255,255,255,0.55);
+        }
+    }
     &.bg-gray-800 {
         z-index: 2;
+        svg {
+            path, line, polyline {
+                color:rgba(255,255,255,0.8);
+            }
+            &:hover {
+                path, line, polyline {
+                    color:rgba(255,255,255,1);
+                }
+            }
+        }
     }
 
     &:not(.bg-gray-800) {
@@ -708,8 +728,9 @@ nav>div>div>a>svg+div+div {
             }
 
             svg {
-                transform: scale(0.8);
-
+                transform: scale(1) translateX(-1.5px) translateY(0.5px);
+                width:15px!important;
+                height:15px!important;
                 path:nth-of-type(1) {
                     fill:none;
                 }
@@ -732,7 +753,9 @@ nav>div>div>a>svg+div+div {
         width: 16px;
         height: 16px;
         opacity: 0.8;
-
+        @media all and (min--moz-device-pixel-ratio:0) {
+            transform: translateY(-7px);
+        }
         &:hover {
             opacity: 1;
             filter: brightness(1.1);

@@ -20,16 +20,12 @@ body > div > div:nth-of-type(2) > div:nth-of-type(1) {
   padding-left: 0;
   -webkit-transition: width 0.24s ease;
   transition: width 0.24s ease;
-  width: calc(100% - 360px);
+  width: 360px;
   margin-right: 0;
   margin-left: auto;
 }
 
 body > div > div:nth-of-type(2) > div:nth-of-type(1).nav-hovered {
-  width: calc(100% - 400px);
-}
-
-body > div > div:nth-of-type(2) > div:nth-of-type(1).nav-hovered + div {
   width: 400px;
 }
 
@@ -106,6 +102,12 @@ nav:hover {
 
 nav:hover #colorgpt-feature-container {
   opacity: 1;
+}
+
+@media all and (min--moz-device-pixel-ratio: 0) {
+  nav > div {
+    max-width: calc(100% - 0.01rem);
+  }
 }
 
 nav #colorgpt-feature-container {
@@ -329,6 +331,10 @@ nav > div > div > button {
           order: 1;
 }
 
+.conversation.pinned:not(.bg-gray-800):after {
+  opacity: 1;
+}
+
 .conversation.pinned:after {
   position: absolute;
   z-index: 1000;
@@ -354,8 +360,8 @@ nav > div > div > button {
 }
 
 .conversation.pinned > svg + div + div > button:nth-of-type(3) svg {
-  -webkit-transform: scale(0.8) rotate(315deg);
-          transform: scale(0.8) rotate(315deg);
+  -webkit-transform: scale(0.88) rotate(315deg);
+          transform: scale(0.88) rotate(315deg);
   opacity: 1;
 }
 
@@ -382,8 +388,20 @@ nav > div > div > button {
   z-index: 3;
 }
 
+.conversation svg path, .conversation svg line, .conversation svg polyline {
+  color: rgba(255, 255, 255, 0.55);
+}
+
 .conversation.bg-gray-800 {
   z-index: 2;
+}
+
+.conversation.bg-gray-800 svg path, .conversation.bg-gray-800 svg line, .conversation.bg-gray-800 svg polyline {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.conversation.bg-gray-800 svg:hover path, .conversation.bg-gray-800 svg:hover line, .conversation.bg-gray-800 svg:hover polyline {
+  color: white;
 }
 
 .conversation:not(.bg-gray-800) {
@@ -727,8 +745,10 @@ nav > div > div > a > svg + div + div > button:nth-of-type(3):hover svg path {
 }
 
 nav > div > div > a > svg + div + div > button:nth-of-type(3) svg {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  -webkit-transform: scale(1) translateX(-1.5px) translateY(0.5px);
+          transform: scale(1) translateX(-1.5px) translateY(0.5px);
+  width: 15px !important;
+  height: 15px !important;
 }
 
 nav > div > div > a > svg + div + div > button:nth-of-type(3) svg path:nth-of-type(1) {
@@ -753,6 +773,13 @@ nav > div > div > a > svg + div + div > button:nth-of-type(3) svg path:nth-of-ty
   width: 16px;
   height: 16px;
   opacity: 0.8;
+}
+
+@media all and (min--moz-device-pixel-ratio: 0) {
+  .color-picker-container button.color-picker {
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
+  }
 }
 
 .color-picker-container button.color-picker:hover {
