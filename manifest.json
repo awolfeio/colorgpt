@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "ColorGPT",
-    "version": "1.0",
+    "version": "1.2",
     "description": "A UI enhancement for ChatGPT. Color-code your conversations in a larger sidebar, filter by color, and even pin them to the top!",
     "permissions": ["storage"],
     "icons": {
@@ -11,7 +11,17 @@
       },
     "content_scripts": [
       {
-        "matches": ["https://chat.openai.com/chat", "https://chat.openai.com/chat/*"],
+        "matches": [
+          "https://chat.openai.com/",
+          "https://chat.openai.com/chat",
+          "https://chat.openai.com/chat/*",
+          "https://chat.openai.com/chat*?model=*",
+          "https://chat.openai.com/c/*",
+          "https://chat.openai.com/*?model=*",
+          "https://chat.openai.com/c/*-*-*",
+          "https://chat.openai.com/c/*-*-*-*",
+          "https://chat.openai.com/c/*-*-*-*-*"
+        ],
         "css": ["styles.css"],
         "js": ["content-script.js"]
       }
