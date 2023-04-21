@@ -60,7 +60,7 @@ setTimeout(() => {
             document.querySelector('nav').classList.add('loading');
 
             const clickInterval = setInterval(() => {
-                const navButton = document.querySelector('nav > div > div > button');
+                const navButton = document.querySelector('nav > div > div > .btn-small');
                 if (navButton) {
                     navButton.click();
                 } else {
