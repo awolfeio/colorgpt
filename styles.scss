@@ -36,6 +36,11 @@ body>div>div:nth-of-type(2)>div:nth-of-type(1) {
     }
 }
 
+nav > .flex-col > div > div {
+    //Inner wrapper added that needs flex-col for order property to work
+    display:flex;
+    flex-direction:column;
+}
 nav {
 
     &.red-active,
@@ -332,7 +337,10 @@ nav>div>div>button {
 .conversation {
     order: 1000;
     position: relative;
-
+    margin:2px 0;
+    &:not(.pinned) {
+        order:2;
+    }
     &.pinned {
         order: 1;
         &:not(.bg-gray-800) {
@@ -357,7 +365,8 @@ nav>div>div>button {
             transition:0.18s ease;
             opacity:0;
         }
-        >svg+div+div>button:nth-of-type(3) {
+
+        > svg + div + div > .pin-convo {
 
             &:hover {
                 svg path:nth-of-type(1) {
@@ -708,8 +717,8 @@ nav>div>div>button {
     opacity: 1 !important;
 }
 
-nav>div>div>a>svg+div+div {
-    >button {
+nav > .flex-col > div > div > a > svg + div + div {
+    > button {
         order: 3;
 
         //Pin Button

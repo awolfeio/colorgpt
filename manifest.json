@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "ColorGPT",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "A UI enhancement for ChatGPT. Color-code your conversations in a larger sidebar, filter by color, and even pin them to the top!",
     "permissions": ["storage"],
     "icons": {

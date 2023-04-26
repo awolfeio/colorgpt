@@ -36,6 +36,16 @@ body > div > div:nth-of-type(2) > div:nth-of-type(1) + div {
   width: 360px;
 }
 
+nav > .flex-col > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 nav.red-active button.active, nav.orange-active button.active, nav.yellow-active button.active, nav.green-active button.active, nav.teal-active button.active, nav.blue-active button.active, nav.purple-active button.active, nav.pink-active button.active {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -324,6 +334,13 @@ nav > div > div > button {
       -ms-flex-order: 1000;
           order: 1000;
   position: relative;
+  margin: 2px 0;
+}
+
+.conversation:not(.pinned) {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 .conversation.pinned {
@@ -356,21 +373,21 @@ nav > div > div > button {
   opacity: 0;
 }
 
-.conversation.pinned > svg + div + div > button:nth-of-type(3):hover svg path:nth-of-type(1) {
+.conversation.pinned > svg + div + div > .pin-convo:hover svg path:nth-of-type(1) {
   fill: rgba(255, 255, 255, 0.7);
 }
 
-.conversation.pinned > svg + div + div > button:nth-of-type(3) svg {
+.conversation.pinned > svg + div + div > .pin-convo svg {
   -webkit-transform: scale(0.88) rotate(315deg);
           transform: scale(0.88) rotate(315deg);
   opacity: 1;
 }
 
-.conversation.pinned > svg + div + div > button:nth-of-type(3) svg path {
+.conversation.pinned > svg + div + div > .pin-convo svg path {
   fill: #fff;
 }
 
-.conversation.pinned > svg + div + div > button:nth-of-type(3) svg path:nth-of-type(1) {
+.conversation.pinned > svg + div + div > .pin-convo svg path:nth-of-type(1) {
   fill: #fff;
 }
 
@@ -723,13 +740,13 @@ nav > div > div > button {
   opacity: 1 !important;
 }
 
-nav > div > div > a > svg + div + div > button {
+nav > .flex-col > div > div > a > svg + div + div > button {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
 }
 
-nav > div > div > a > svg + div + div > button:nth-of-type(3) {
+nav > .flex-col > div > div > a > svg + div + div > button:nth-of-type(3) {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
@@ -741,18 +758,18 @@ nav > div > div > a > svg + div + div > button:nth-of-type(3) {
           transform: translateY(3.5px);
 }
 
-nav > div > div > a > svg + div + div > button:nth-of-type(3):hover svg path {
+nav > .flex-col > div > div > a > svg + div + div > button:nth-of-type(3):hover svg path {
   fill: #fff;
 }
 
-nav > div > div > a > svg + div + div > button:nth-of-type(3) svg {
+nav > .flex-col > div > div > a > svg + div + div > button:nth-of-type(3) svg {
   -webkit-transform: scale(1) translateX(-1.5px) translateY(0.5px);
           transform: scale(1) translateX(-1.5px) translateY(0.5px);
   width: 15px !important;
   height: 15px !important;
 }
 
-nav > div > div > a > svg + div + div > button:nth-of-type(3) svg path:nth-of-type(1) {
+nav > .flex-col > div > div > a > svg + div + div > button:nth-of-type(3) svg path:nth-of-type(1) {
   fill: none;
 }
 

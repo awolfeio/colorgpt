@@ -128,7 +128,7 @@ setTimeout(() => {
 
 
             // Select all conversation elements using the provided selector
-            const conversationElements = document.querySelectorAll('nav > div > div > a');
+            const conversationElements = document.querySelectorAll('nav > .flex-col > div > div > a');
 
             // Define an array of color classes for the color option buttons
             const colorClasses = ['red', 'orange', 'yellow', 'green', 'teal', 'blue', 'purple', 'pink', 'black'];
@@ -452,7 +452,7 @@ setTimeout(() => {
         // If the DOM is already loaded, call the function directly
         setTimeout(() => {
             onDomLoaded();
-        }, 660);
+        }, 800);
     }
 
-}, 660);
+}, 800);
