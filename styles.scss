@@ -36,7 +36,7 @@ body>div>div:nth-of-type(2)>div:nth-of-type(1) {
     }
 }
 
-nav > .flex-col > div > div {
+nav > .flex-col > div > div > span {
     //Inner wrapper added that needs flex-col for order property to work
     display:flex;
     flex-direction:column;
@@ -51,6 +51,9 @@ nav {
     &.blue-active,
     &.purple-active,
     &.pink-active {
+        .flex-col > div > div > span > .relative {
+            display:none!important;
+        }
         button.active {
             transform: scale(1.05);
             order: 1;
@@ -70,49 +73,49 @@ nav {
     }
 
     &.red-active {
-        a.conversation:not(.red) {
+        .conversation:not(.red) {
             display: none;
         }
     }
 
     &.orange-active {
-        a.conversation:not(.orange) {
+        .conversation:not(.orange) {
             display: none;
         }
     }
 
     &.yellow-active {
-        a.conversation:not(.yellow) {
+        .conversation:not(.yellow) {
             display: none;
         }
     }
 
     &.green-active {
-        a.conversation:not(.green) {
+        .conversation:not(.green) {
             display: none;
         }
     }
 
     &.teal-active {
-        a.conversation:not(.teal) {
+        .conversation:not(.teal) {
             display: none;
         }
     }
 
     &.blue-active {
-        a.conversation:not(.blue) {
+        .conversation:not(.blue) {
             display: none;
         }
     }
 
     &.purple-active {
-        a.conversation:not(.purple) {
+        .conversation:not(.purple) {
             display: none;
         }
     }
 
     &.pink-active {
-        a.conversation:not(.pink) {
+        .conversation:not(.pink) {
             display: none;
         }
     }
@@ -313,7 +316,7 @@ nav {
 }
 
 //Conversation Title Size Adjustment
-nav>div>div>a>svg+div {
+.conversation>a>svg+div {
     width: 230px;
     max-width: 230px;
 }
@@ -327,9 +330,16 @@ nav>div>div>a:not(.bg-gray-800)>svg+div {
 nav>div>div>button {
     order: 1001;
 }
-
+nav > .flex-col > div > div > span {
+    div {
+        order:2;
+        &.pinned-conversations {
+            order:1;
+        }
+    }
+}
 .nav-hovered + div {
-    .conversation.pinned:not(.bg-gray-800):after {
+    .conversation.pinned > a:not(.bg-gray-800):after {
         opacity:1;
     }
 }
@@ -338,17 +348,21 @@ nav>div>div>button {
     order: 1000;
     position: relative;
     margin:2px 0;
+    z-index:5;
     &:not(.pinned) {
         order:2;
     }
+    &.color-picker-active {
+        z-index:500!important;
+    }
     &.pinned {
         order: 1;
-        &:not(.bg-gray-800) {
+        > a:not(.bg-gray-800) {
             &:after {
                 opacity:1;
             }
         }
-        &:after {
+        > a:after {
             position:absolute;
             z-index:1000;
             right:12px;
@@ -366,7 +380,7 @@ nav>div>div>button {
             opacity:0;
         }
 
-        > svg + div + div > .pin-convo {
+        > a > svg + div + div > .pin-convo {
 
             &:hover {
                 svg path:nth-of-type(1) {
@@ -390,14 +404,14 @@ nav>div>div>button {
     &:hover {
 
         //Pin Button
-        >svg+div+div>button:nth-of-type(3) {
+        >a>svg+div+div>button:nth-of-type(3) {
             opacity: 1;
             pointer-events: auto;
             transition: opacity 0.18s ease;
         }
     }
 
-    >div {
+    > div {
         z-index: 2;
 
         +div {
@@ -463,7 +477,7 @@ nav>div>div>button {
         order: 8;
     }
 
-    &.red {
+    &.red > a {
         background: rgba(160, 68, 68, 0.45);
 
         >svg+div>div {
@@ -494,7 +508,7 @@ nav>div>div>button {
         }
     }
 
-    &.orange {
+    &.orange > a {
         background: rgba(192, 119, 78, 0.45);
 
         >svg+div>div {
@@ -525,7 +539,7 @@ nav>div>div>button {
         }
     }
 
-    &.yellow {
+    &.yellow > a {
         background: rgba(192, 167, 78, 0.45);
 
         >svg+div>div {
@@ -556,7 +570,7 @@ nav>div>div>button {
         }
     }
 
-    &.green {
+    &.green > a {
         background: rgba(108, 192, 78, 0.45);
 
         >svg+div>div {
@@ -587,7 +601,7 @@ nav>div>div>button {
         }
     }
 
-    &.teal {
+    &.teal > a {
         background: rgba(78, 185, 192, 0.45);
 
         >svg+div>div {
@@ -618,7 +632,7 @@ nav>div>div>button {
         }
     }
 
-    &.blue {
+    &.blue > a {
         background: rgba(78, 103, 192, 0.45);
 
         >svg+div>div {
@@ -649,7 +663,7 @@ nav>div>div>button {
         }
     }
 
-    &.purple {
+    &.purple > a {
         background: rgba(128, 78, 192, 0.45);
 
         >svg+div>div {
@@ -680,7 +694,7 @@ nav>div>div>button {
         }
     }
 
-    &.pink {
+    &.pink > a {
         background: rgba(190, 78, 192, 0.45);
 
         >svg+div>div {
@@ -713,11 +727,11 @@ nav>div>div>button {
 }
 
 //Always Show Pinned Convos Pin Icon
-.nav-hovered+div nav>div>div>a.pinned>svg+div+div>button:nth-of-type(3) {
+.nav-hovered nav>div>div>li.pinned>a>svg+div+div>button:nth-of-type(3) {
     opacity: 1 !important;
 }
 
-nav > .flex-col > div > div > a > svg + div + div {
+nav > .flex-col > div > div li > a > svg + div + div {
     > button {
         order: 3;
 
@@ -793,7 +807,7 @@ nav > .flex-col > div > div > a > svg + div + div {
         background: #2A2B32;
         border-radius: 4px;
         border: 1.5px solid rgba(255, 255, 255, 0.7);
-        box-shadow: 0px 0px 8px rgba(2, 2, 2, 0.2);
+        box-shadow: 0px 4px 16px -4px rgba(2, 2, 2, 0.6);
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
