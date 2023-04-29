@@ -354,6 +354,7 @@ nav > .flex-col > div > div > span {
     position: relative;
     margin:2px 0;
     z-index:5;
+    overflow:visible!important;
     &:not(.pinned) {
         order:2;
     }

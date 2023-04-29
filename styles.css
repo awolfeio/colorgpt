@@ -362,6 +362,7 @@ nav > .flex-col > div > div > span div.pinned-conversations {
   position: relative;
   margin: 2px 0;
   z-index: 5;
+  overflow: visible !important;
 }
 
 .conversation:not(.pinned) {
