@@ -46,6 +46,16 @@ nav > .flex-col > div > div > span {
           flex-direction: column;
 }
 
+nav > .flex-col > div > div > span .pinned-conversations ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 nav.red-active .flex-col > div > div > span > .relative, nav.orange-active .flex-col > div > div > span > .relative, nav.yellow-active .flex-col > div > div > span > .relative, nav.green-active .flex-col > div > div > span > .relative, nav.teal-active .flex-col > div > div > span > .relative, nav.blue-active .flex-col > div > div > span > .relative, nav.purple-active .flex-col > div > div > span > .relative, nav.pink-active .flex-col > div > div > span > .relative {
   display: none !important;
 }
@@ -501,6 +511,12 @@ nav > .flex-col > div > div > span div.pinned-conversations {
           order: 8;
 }
 
+.conversation.red {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
 .conversation.red > a {
   background: rgba(160, 68, 68, 0.45);
 }
@@ -531,6 +547,12 @@ nav > .flex-col > div > div > span div.pinned-conversations {
 .conversation.red > a .color-options .red {
   border: 1px solid white;
   pointer-events: none;
+}
+
+.conversation.orange {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 .conversation.orange > a {
@@ -565,6 +587,12 @@ nav > .flex-col > div > div > span div.pinned-conversations {
   pointer-events: none;
 }
 
+.conversation.yellow {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
 .conversation.yellow > a {
   background: rgba(192, 167, 78, 0.45);
 }
@@ -595,6 +623,12 @@ nav > .flex-col > div > div > span div.pinned-conversations {
 .conversation.yellow > a .color-options .yellow {
   border: 1px solid white;
   pointer-events: none;
+}
+
+.conversation.green {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
 }
 
 .conversation.green > a {
@@ -629,6 +663,12 @@ nav > .flex-col > div > div > span div.pinned-conversations {
   pointer-events: none;
 }
 
+.conversation.teal {
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
+}
+
 .conversation.teal > a {
   background: rgba(78, 185, 192, 0.45);
 }
@@ -659,6 +699,12 @@ nav > .flex-col > div > div > span div.pinned-conversations {
 .conversation.teal > a .color-options .teal {
   border: 1px solid white;
   pointer-events: none;
+}
+
+.conversation.blue {
+  -webkit-box-ordinal-group: 7;
+      -ms-flex-order: 6;
+          order: 6;
 }
 
 .conversation.blue > a {
@@ -693,6 +739,12 @@ nav > .flex-col > div > div > span div.pinned-conversations {
   pointer-events: none;
 }
 
+.conversation.purple {
+  -webkit-box-ordinal-group: 8;
+      -ms-flex-order: 7;
+          order: 7;
+}
+
 .conversation.purple > a {
   background: rgba(128, 78, 192, 0.45);
 }
@@ -723,6 +775,12 @@ nav > .flex-col > div > div > span div.pinned-conversations {
 .conversation.purple > a .color-options .purple {
   border: 1px solid white;
   pointer-events: none;
+}
+
+.conversation.pink {
+  -webkit-box-ordinal-group: 9;
+      -ms-flex-order: 8;
+          order: 8;
 }
 
 .conversation.pink > a {

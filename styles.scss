@@ -40,6 +40,11 @@ nav > .flex-col > div > div > span {
     //Inner wrapper added that needs flex-col for order property to work
     display:flex;
     flex-direction:column;
+
+    .pinned-conversations ol {
+        display:flex;
+        flex-direction:column;
+    }
 }
 nav {
 
@@ -477,250 +482,274 @@ nav > .flex-col > div > div > span {
         order: 8;
     }
 
-    &.red > a {
-        background: rgba(160, 68, 68, 0.45);
-
-        >svg+div>div {
-            background: linear-gradient(to right, rgba(160, 68, 68, 0) 0%, #5A3132 100%);
-        }
-
-        &:not(.bg-gray-800):hover {
-            background: rgba(160, 68, 68, 0.68);
-
+    &.red {
+        order:1;
+        > a {
+            background: rgba(160, 68, 68, 0.45);
+    
             >svg+div>div {
-                background: linear-gradient(to right, rgba(160, 68, 68, 0) 0%, #773939 100%);
+                background: linear-gradient(to right, rgba(160, 68, 68, 0) 0%, #5A3132 100%);
+            }
+    
+            &:not(.bg-gray-800):hover {
+                background: rgba(160, 68, 68, 0.68);
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(160, 68, 68, 0) 0%, #773939 100%);
+                }
+            }
+    
+            &.bg-gray-800 {
+                background: $red;
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(192, 119, 78, 0) 0%, $red 100%);
+                }
+            }
+    
+            .color-options {
+                .red {
+                    border: 1px solid rgba(255, 255, 255, 1);
+                    pointer-events: none;
+                }
             }
         }
+    } 
 
-        &.bg-gray-800 {
-            background: $red;
-
+    &.orange {
+        order:2;
+        > a {
+            background: rgba(192, 119, 78, 0.45);
+    
             >svg+div>div {
-                background: linear-gradient(to right, rgba(192, 119, 78, 0) 0%, $red 100%);
+                background: linear-gradient(to right, rgba(192, 119, 78, 0) 0%, #694836 100%);
+            }
+    
+            &:not(.bg-gray-800):hover {
+                background: rgba(192, 119, 78, 0.68);
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(192, 119, 78, 0) 0%, #8B5B3F 100%);
+                }
+            }
+    
+            &.bg-gray-800 {
+                background: rgba(192, 119, 78, 1);
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(192, 119, 78, 0) 0%, $orange 100%);
+                }
+            }
+    
+            .color-options {
+                .orange {
+                    border: 1px solid rgba(255, 255, 255, 1);
+                    pointer-events: none;
+                }
             }
         }
+    } 
 
-        .color-options {
-            .red {
-                border: 1px solid rgba(255, 255, 255, 1);
-                pointer-events: none;
+    &.yellow {
+        order:3;
+        > a {
+            background: rgba(192, 167, 78, 0.45);
+    
+            >svg+div>div {
+                background: linear-gradient(to right, rgba(192, 167, 78, 0) 0%, #695D36 100%);
+            }
+    
+            &:not(.bg-gray-800):hover {
+                background: rgba(192, 167, 78, 0.68);
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(192, 167, 78, 0) 0%, #8B7C40 100%);
+                }
+            }
+    
+            &.bg-gray-800 {
+                background: $yellow;
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(192, 167, 78, 0) 0%, $yellow 100%);
+                }
+            }
+    
+            .color-options {
+                .yellow {
+                    border: 1px solid rgba(255, 255, 255, 1);
+                    pointer-events: none;
+                }
             }
         }
     }
 
-    &.orange > a {
-        background: rgba(192, 119, 78, 0.45);
-
-        >svg+div>div {
-            background: linear-gradient(to right, rgba(192, 119, 78, 0) 0%, #694836 100%);
-        }
-
-        &:not(.bg-gray-800):hover {
-            background: rgba(192, 119, 78, 0.68);
-
+    &.green {
+        order:4;
+        > a {
+            background: rgba(108, 192, 78, 0.45);
+    
             >svg+div>div {
-                background: linear-gradient(to right, rgba(192, 119, 78, 0) 0%, #8B5B3F 100%);
+                background: linear-gradient(to right, rgba(108, 192, 78, 0) 0%, #436936 100%);
             }
-        }
-
-        &.bg-gray-800 {
-            background: rgba(192, 119, 78, 1);
-
-            >svg+div>div {
-                background: linear-gradient(to right, rgba(192, 119, 78, 0) 0%, $orange 100%);
+    
+            &:not(.bg-gray-800):hover {
+                background: rgba(108, 192, 78, 0.68);
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(108, 192, 78, 0) 0%, #538C40 100%);
+                }
             }
-        }
-
-        .color-options {
-            .orange {
-                border: 1px solid rgba(255, 255, 255, 1);
-                pointer-events: none;
+    
+            &.bg-gray-800 {
+                background: $green;
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(108, 192, 78, 0) 0%, $green 100%);
+                }
+            }
+    
+            .color-options {
+                .green {
+                    border: 1px solid rgba(255, 255, 255, 1);
+                    pointer-events: none;
+                }
             }
         }
     }
 
-    &.yellow > a {
-        background: rgba(192, 167, 78, 0.45);
-
-        >svg+div>div {
-            background: linear-gradient(to right, rgba(192, 167, 78, 0) 0%, #695D36 100%);
-        }
-
-        &:not(.bg-gray-800):hover {
-            background: rgba(192, 167, 78, 0.68);
-
+    &.teal {
+        order:5;
+        > a {
+            background: rgba(78, 185, 192, 0.45);
+    
             >svg+div>div {
-                background: linear-gradient(to right, rgba(192, 167, 78, 0) 0%, #8B7C40 100%);
+                background: linear-gradient(to right, rgba(78, 185, 192, 0) 0%, #35656A 100%);
             }
-        }
-
-        &.bg-gray-800 {
-            background: $yellow;
-
-            >svg+div>div {
-                background: linear-gradient(to right, rgba(192, 167, 78, 0) 0%, $yellow 100%);
+    
+            &:not(.bg-gray-800):hover {
+                background: rgba(78, 185, 192, 0.68);
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(78, 185, 192, 0) 0%, #3F898D 100%);
+                }
             }
-        }
-
-        .color-options {
-            .yellow {
-                border: 1px solid rgba(255, 255, 255, 1);
-                pointer-events: none;
+    
+            &.bg-gray-800 {
+                background: $teal;
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(78, 185, 192, 0) 0%, $teal 100%);
+                }
+            }
+    
+            .color-options {
+                .teal {
+                    border: 1px solid rgba(255, 255, 255, 1);
+                    pointer-events: none;
+                }
             }
         }
     }
 
-    &.green > a {
-        background: rgba(108, 192, 78, 0.45);
-
-        >svg+div>div {
-            background: linear-gradient(to right, rgba(108, 192, 78, 0) 0%, #436936 100%);
-        }
-
-        &:not(.bg-gray-800):hover {
-            background: rgba(108, 192, 78, 0.68);
-
+    &.blue {
+        order:6;
+        > a {
+            background: rgba(78, 103, 192, 0.45);
+    
             >svg+div>div {
-                background: linear-gradient(to right, rgba(108, 192, 78, 0) 0%, #538C40 100%);
+                background: linear-gradient(to right, rgba(78, 103, 192, 0) 0%, #35406A 100%);
             }
-        }
-
-        &.bg-gray-800 {
-            background: $green;
-
-            >svg+div>div {
-                background: linear-gradient(to right, rgba(108, 192, 78, 0) 0%, $green 100%);
+    
+            &:not(.bg-gray-800):hover {
+                background: rgba(78, 103, 192, 0.68);
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(78, 103, 192, 0) 0%, #3F518C 100%);
+                }
             }
-        }
-
-        .color-options {
-            .green {
-                border: 1px solid rgba(255, 255, 255, 1);
-                pointer-events: none;
+    
+            &.bg-gray-800 {
+                background: $blue;
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(78, 103, 192, 0) 0%, $blue 100%);
+                }
+            }
+    
+            .color-options {
+                .blue {
+                    border: 1px solid rgba(255, 255, 255, 1);
+                    pointer-events: none;
+                }
             }
         }
     }
 
-    &.teal > a {
-        background: rgba(78, 185, 192, 0.45);
-
-        >svg+div>div {
-            background: linear-gradient(to right, rgba(78, 185, 192, 0) 0%, #35656A 100%);
-        }
-
-        &:not(.bg-gray-800):hover {
-            background: rgba(78, 185, 192, 0.68);
-
+    &.purple {
+        order:7;
+        > a {
+            background: rgba(128, 78, 192, 0.45);
+    
             >svg+div>div {
-                background: linear-gradient(to right, rgba(78, 185, 192, 0) 0%, #3F898D 100%);
+                background: linear-gradient(to right, rgba(128, 78, 192, 0) 0%, #4C356A 100%);
             }
-        }
-
-        &.bg-gray-800 {
-            background: $teal;
-
-            >svg+div>div {
-                background: linear-gradient(to right, rgba(78, 185, 192, 0) 0%, $teal 100%);
+    
+            &:not(.bg-gray-800):hover {
+                background: rgba(128, 78, 192, 0.68);
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(128, 78, 192, 0) 0%, #61408D 100%);
+                }
             }
-        }
-
-        .color-options {
-            .teal {
-                border: 1px solid rgba(255, 255, 255, 1);
-                pointer-events: none;
+    
+            &.bg-gray-800 {
+                background: $purple;
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(128, 78, 192, 0) 0%, $purple 100%);
+                }
+            }
+    
+            .color-options {
+                .purple {
+                    border: 1px solid rgba(255, 255, 255, 1);
+                    pointer-events: none;
+                }
             }
         }
     }
 
-    &.blue > a {
-        background: rgba(78, 103, 192, 0.45);
-
-        >svg+div>div {
-            background: linear-gradient(to right, rgba(78, 103, 192, 0) 0%, #35406A 100%);
-        }
-
-        &:not(.bg-gray-800):hover {
-            background: rgba(78, 103, 192, 0.68);
-
+    &.pink {
+        order:8;
+        > a {
+            background: rgba(190, 78, 192, 0.45);
+    
             >svg+div>div {
-                background: linear-gradient(to right, rgba(78, 103, 192, 0) 0%, #3F518C 100%);
+                background: linear-gradient(to right, rgba(190, 78, 192, 0) 0%, #68356A 100%);
             }
-        }
-
-        &.bg-gray-800 {
-            background: $blue;
-
-            >svg+div>div {
-                background: linear-gradient(to right, rgba(78, 103, 192, 0) 0%, $blue 100%);
+    
+            &:not(.bg-gray-800):hover {
+                background: rgba(190, 78, 192, 0.68);
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(190, 78, 192, 0) 0%, #8B408D 100%);
+                }
             }
-        }
-
-        .color-options {
-            .blue {
-                border: 1px solid rgba(255, 255, 255, 1);
-                pointer-events: none;
+    
+            &.bg-gray-800 {
+                background: $pink;
+    
+                >svg+div>div {
+                    background: linear-gradient(to right, rgba(190, 78, 192, 0) 0%, $pink 100%);
+                }
             }
-        }
-    }
-
-    &.purple > a {
-        background: rgba(128, 78, 192, 0.45);
-
-        >svg+div>div {
-            background: linear-gradient(to right, rgba(128, 78, 192, 0) 0%, #4C356A 100%);
-        }
-
-        &:not(.bg-gray-800):hover {
-            background: rgba(128, 78, 192, 0.68);
-
-            >svg+div>div {
-                background: linear-gradient(to right, rgba(128, 78, 192, 0) 0%, #61408D 100%);
-            }
-        }
-
-        &.bg-gray-800 {
-            background: $purple;
-
-            >svg+div>div {
-                background: linear-gradient(to right, rgba(128, 78, 192, 0) 0%, $purple 100%);
-            }
-        }
-
-        .color-options {
-            .purple {
-                border: 1px solid rgba(255, 255, 255, 1);
-                pointer-events: none;
-            }
-        }
-    }
-
-    &.pink > a {
-        background: rgba(190, 78, 192, 0.45);
-
-        >svg+div>div {
-            background: linear-gradient(to right, rgba(190, 78, 192, 0) 0%, #68356A 100%);
-        }
-
-        &:not(.bg-gray-800):hover {
-            background: rgba(190, 78, 192, 0.68);
-
-            >svg+div>div {
-                background: linear-gradient(to right, rgba(190, 78, 192, 0) 0%, #8B408D 100%);
-            }
-        }
-
-        &.bg-gray-800 {
-            background: $pink;
-
-            >svg+div>div {
-                background: linear-gradient(to right, rgba(190, 78, 192, 0) 0%, $pink 100%);
-            }
-        }
-
-        .color-options {
-            .pink {
-                border: 1px solid rgba(255, 255, 255, 1);
-                pointer-events: none;
+    
+            .color-options {
+                .pink {
+                    border: 1px solid rgba(255, 255, 255, 1);
+                    pointer-events: none;
+                }
             }
         }
     }
