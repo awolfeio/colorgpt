@@ -56,9 +56,7 @@ nav {
     &.blue-active,
     &.purple-active,
     &.pink-active {
-        .flex-col > div > div > span > .relative {
-            display:none!important;
-        }
+
         button.active {
             transform: scale(1.05);
             order: 1;

@@ -56,10 +56,6 @@ nav > .flex-col > div > div > span .pinned-conversations ol {
           flex-direction: column;
 }
 
-nav.red-active .flex-col > div > div > span > .relative, nav.orange-active .flex-col > div > div > span > .relative, nav.yellow-active .flex-col > div > div > span > .relative, nav.green-active .flex-col > div > div > span > .relative, nav.teal-active .flex-col > div > div > span > .relative, nav.blue-active .flex-col > div > div > span > .relative, nav.purple-active .flex-col > div > div > span > .relative, nav.pink-active .flex-col > div > div > span > .relative {
-  display: none !important;
-}
-
 nav.red-active button.active, nav.orange-active button.active, nav.yellow-active button.active, nav.green-active button.active, nav.teal-active button.active, nav.blue-active button.active, nav.purple-active button.active, nav.pink-active button.active {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
