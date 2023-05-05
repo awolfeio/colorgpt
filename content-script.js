@@ -143,7 +143,7 @@ setTimeout(() => {
 
                 const pinnedConversationsContainer = document.createElement('div');
                 pinnedConversationsContainer.className = 'pinned-conversations';
-
+                pinnedConversationsContainer.classList.add('relative');
                 const pinnedConversationsInnerWrapper = document.createElement('ol');
 
                 const pinnedConversationsLabel = document.createElement('div');
@@ -411,6 +411,7 @@ setTimeout(() => {
         const observer = new MutationObserver((mutationsList, observer) => {
             observer.disconnect();
             setTimeout(() => {
+                console.log('Engaging UI Changes via MutationObserver!');
                 engageUIChanges();
             }, 750);
             reconnectObserver(1500);
