@@ -65,35 +65,48 @@ setTimeout(() => {
 
     function onDomLoaded() {
 
-        let hasClickedNavButton = false;
+        let hasScrolled = false;
+        let maxScrollCount = 6;
+        let scrollCount = 0;
+        
+        function scrollDownUntilLoaded(interval) {
 
-        function clickNavButtonUntilGone(interval) {
-            if (hasClickedNavButton) {
+            const flexColElement = document.querySelector('nav > .flex-col');
+
+            if (hasScrolled) {
+                if (flexColElement) {
+                    flexColElement.scrollTop = 0;
+                }
                 return;
             }
-
+        
             document.querySelector('nav').classList.add('loading');
+        
+            const scrollInterval = setInterval(() => {
 
-            const clickInterval = setInterval(() => {
-                const navButton = document.querySelector('nav > div > div > .btn-small');
-                if (navButton) {
+                if (flexColElement && scrollCount < maxScrollCount) {
                     setTimeout(() => {
-                        navButton.click();
+                        flexColElement.scrollTop = flexColElement.scrollHeight;
+                        scrollCount++;
                     }, 150);
                 } else {
                     setTimeout(() => {
                         document.querySelector('nav').classList.remove('loading');
                         document.querySelector('nav').classList.add('colorgpt-loaded');
+                        if (flexColElement) {
+                            flexColElement.scrollTop = 0;
+                        }
                     }, 125);
                     setTimeout(() => {
                         engageUIChanges();
                     }, 250);
-
-                    clearInterval(clickInterval);
-                    hasClickedNavButton = true;
+        
+                    clearInterval(scrollInterval);
+                    hasScrolled = true;
                 }
             }, interval);
         }
+        
 
         function engageUIChanges() {
 
@@ -403,8 +416,8 @@ setTimeout(() => {
 
         engageUIChanges();
 
-        if (!hasClickedNavButton) {
-            clickNavButtonUntilGone(850);
+        if (!hasScrolled) {
+            scrollDownUntilLoaded(850);
         }
 
         const observerConfig = { childList: true, subtree: true };

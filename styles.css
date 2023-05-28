@@ -424,7 +424,7 @@ nav > .flex-col > div > div > span div.pinned-conversations {
   fill: #fff;
 }
 
-.conversation:hover > a > svg + div + div > button:nth-of-type(3) {
+.conversation:hover > a > svg + div + div > .pin-convo {
   opacity: 1;
   pointer-events: auto;
   -webkit-transition: opacity 0.18s ease;
@@ -827,30 +827,34 @@ nav > .flex-col > div > div li > a > svg + div + div > button {
           order: 3;
 }
 
-nav > .flex-col > div > div li > a > svg + div + div > button:nth-of-type(3) {
+nav > .flex-col > div > div li > a > svg + div + div > button.pin-convo {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  right: 78px;
+  right: 100px;
   -webkit-transform: translateY(3.5px);
           transform: translateY(3.5px);
 }
 
-nav > .flex-col > div > div li > a > svg + div + div > button:nth-of-type(3):hover svg path {
+nav > .flex-col > div > div li > a > svg + div + div > button.pin-convo:hover svg path {
   fill: #fff;
 }
 
-nav > .flex-col > div > div li > a > svg + div + div > button:nth-of-type(3) svg {
+nav > .flex-col > div > div li > a > svg + div + div > button.pin-convo svg {
   -webkit-transform: scale(1) translateX(-1.5px) translateY(0.5px);
           transform: scale(1) translateX(-1.5px) translateY(0.5px);
   width: 15px !important;
   height: 15px !important;
 }
 
-nav > .flex-col > div > div li > a > svg + div + div > button:nth-of-type(3) svg path:nth-of-type(1) {
+nav > .flex-col > div > div li > a > svg + div + div > button.pin-convo svg path {
+  fill: rgba(255, 255, 255, 0.5);
+}
+
+nav > .flex-col > div > div li > a > svg + div + div > button.pin-convo svg path:nth-of-type(1) {
   fill: none;
 }
 

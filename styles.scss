@@ -412,7 +412,7 @@ nav > .flex-col > div > div > span {
     &:hover {
 
         //Pin Button
-        >a>svg+div+div>button:nth-of-type(3) {
+        >a>svg+div+div>.pin-convo {
             opacity: 1;
             pointer-events: auto;
             transition: opacity 0.18s ease;
@@ -768,12 +768,12 @@ nav > .flex-col > div > div li > a > svg + div + div {
         order: 3;
 
         //Pin Button
-        &:nth-of-type(3) {
+        &.pin-convo {
             order: 1;
             opacity: 0;
             pointer-events: none;
             position: absolute;
-            right: 78px;
+            right: 100px;
             transform: translateY(3.5px);
 
             &:hover {
@@ -786,6 +786,9 @@ nav > .flex-col > div > div li > a > svg + div + div {
                 transform: scale(1) translateX(-1.5px) translateY(0.5px);
                 width:15px!important;
                 height:15px!important;
+                path {
+                    fill:rgba(255,255,255,0.5);
+                }
                 path:nth-of-type(1) {
                     fill:none;
                 }
