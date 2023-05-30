@@ -10,4 +10,4 @@ Additionally:
 [Updated: 5/28/2023]
 Updated loading process and pin button CSS.
 
-![colorgpt](https://user-images.githubusercontent.com/22933348/229624789-a4068d2c-a4ef-4340-8a35-f1d28c1efd1d.jpg)
+![ColorGPT-Screenshot](https://github.com/awolfeio/colorgpt/assets/22933348/b79dd578-ad0f-4d26-8a05-6843c2b9f302)
