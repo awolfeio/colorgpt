@@ -417,7 +417,7 @@ setTimeout(() => {
         engageUIChanges();
 
         if (!hasScrolled) {
-            scrollDownUntilLoaded(850);
+            scrollDownUntilLoaded(1000);
         }
 
         const observerConfig = { childList: true, subtree: true };
